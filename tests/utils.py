@@ -9,17 +9,19 @@ import ledger_app_clients.ethereum.response_parser as ResponseParser
 DERIVATION_PATH = "m/44'/60'/0'/0/0"
 makefile_relative_path = "../Makefile"
 
-makefile_path = (Path(os.path.dirname(os.path.realpath(__file__))) / Path(makefile_relative_path)).resolve()
+makefile_path = (
+    Path(os.path.dirname(os.path.realpath(__file__))) / Path(makefile_relative_path)
+).resolve()
 
-pattern = r'.*APPNAME.*=.*'
+pattern = r".*APPNAME.*=.*"
 
 default_strip_parameter = " \t\n\r\x0b\x0c"
 
 
 def get_appname_from_makefile() -> str:
-    '''
+    """
     Parse the app Makefile to automatically get the APPNAME value
-    '''
+    """
     APPNAME: Optional[str] = None
     with open(makefile_path) as file:
         for line in file:

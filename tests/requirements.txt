@@ -1,3 +1,3 @@
-ledger_app_clients.ethereum
-pytest
-ragger[speculos,ledgercomm]
+ledger_app_clients.ethereum>=0.6.0
+pytest>=9.0.2
+ragger[speculos,ledgercomm]>=1.41.1
